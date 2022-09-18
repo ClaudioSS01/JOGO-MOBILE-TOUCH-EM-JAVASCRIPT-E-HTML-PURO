@@ -1,0 +1,209 @@
+
+#guarda_roupa{
+  position: absolute; 
+  top: 7vmin; 
+  width: 60vmin;
+  left: 16vmin;  
+  z-index: 0;
+
+}
+
+#fogao{
+    position: absolute;
+    top: 35vmin;
+    left: 570vmin;
+    width: 25vmin !important;
+
+}
+
+
+#pia{
+    position: absolute;
+    top: 35vmin;
+    left: 510vmin;
+    width: 55vmin !important;
+}
+
+#geladeira{
+    position: absolute;
+    top: 10vmin;
+    left: 480vmin;
+    width: 23vmin !important;
+}
+
+#armario_1{
+    position: absolute;
+    top: 0vmin;
+    left: 550vmin;
+    width: 45vmin !important;
+}
+
+
+#armario_2{
+    position: absolute;
+    top: 0vmin;
+    left: 510vmin;
+    width: 45vmin !important;
+}
+
+
+
+#colher_grande_1{
+    position: absolute;
+    top: 20vmin;
+    left: 515vmin;
+    width: 3vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    
+  
+  }
+  
+  
+  #colher_grande_2{
+    position: absolute;
+    top: 20vmin;
+    left: 520vmin;
+    width: 3vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    
+  
+  }
+  
+  
+  #colher_grande_3{
+    position: absolute;
+    top: 20vmin;
+    left: 525vmin;
+    width: 3vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    
+  
+  }
+  
+  
+  #colher_grande_4{
+    position: absolute;
+    top: 20vmin;
+    left: 530vmin;
+    width: 3vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    
+  
+  }
+  
+  
+  #escumadeira{
+    position: absolute;
+    top: 20vmin;
+    left: 535vmin;
+    width: 3.5vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+  }
+  
+  #garfo{
+    position: absolute;
+    top: 20vmin;
+    left: 540vmin;
+    width: 3.5vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+  }
+  
+  
+  #panela_1{
+    position: absolute;
+    top: 29vmin;
+    left: 550vmin;
+    width: 15vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+  }
+  
+
+  #panela_2{
+    position: absolute;
+    top: 29vmin;
+    left: 530vmin;
+    width: 15vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+  }
+  
+
+  #panela_3{
+    position: absolute;
+    top: 29vmin;
+    left: 510vmin;
+    width: 15vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+  }
+  

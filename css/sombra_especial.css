@@ -1,0 +1,3 @@
+ /*sombra especial*/
+ -webkit-filter: drop-shadow(1vmin 1vmin 1vmin #222);
+ filter: drop-shadow(1vmin 1vmin 1vmin #222);

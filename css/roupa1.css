@@ -1,0 +1,18 @@
+#roupa1{
+
+
+/*necessario para tornar o cachorro arrastavel*/
+touch-action: none;
+user-select: none;
+
+}
+
+
+
+#vestido_shirley{
+    position: absolute;
+    top: 13vmin;
+    left: 25vmin;
+    width: 20vmin;   
+    z-index: 9 !important;
+}

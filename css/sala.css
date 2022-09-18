@@ -1,0 +1,31 @@
+#sofa_1{
+    position: absolute;
+    top: 20vmin;
+    left: 262vmin;
+    width: 55vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+}
+
+#sofa_2{
+    position: absolute;
+    top: 20vmin;
+    left: 380vmin;
+    width: 55vmin;
+    
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+}

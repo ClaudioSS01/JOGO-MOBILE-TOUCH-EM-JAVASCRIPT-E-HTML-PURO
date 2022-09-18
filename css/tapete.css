@@ -1,0 +1,38 @@
+
+
+/*circulo maior externo do tapete*/
+tapete_quarto {
+    position: absolute;
+    width: 40vmin;
+    height: 20vmin;
+    background: #E066FF;
+    top: 80vmin;
+    left: 20vmin;
+    border-radius: 50%;
+    z-index: 1 !important;
+  }
+  /*circulo menor interno*/
+  tapete_quarto::after{
+    content: "";
+    position: absolute;
+    width: 20vmin;
+    height: 10vmin;
+    background: #E066FF;
+    top: 5vmin;
+    left: 10vmin;
+    border-radius: 50%;
+  }
+  /*circulo do meio do tapete*/
+  tapete_quarto::before{
+    content: "";
+    position: absolute;
+    width: 30vmin;
+    height: 15vmin;
+    background: #59076d;
+    top: 2.5vmin;
+    left: 5vmin;
+    border-radius: 50%;
+  }
+  
+  
+  

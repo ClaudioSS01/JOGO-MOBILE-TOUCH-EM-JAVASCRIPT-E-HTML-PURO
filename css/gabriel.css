@@ -1,0 +1,180 @@
+#gabriel{
+  
+  min-height: 0;
+  margin: 0 0 0 0;
+  border-radius: 0.75em;
+  padding: 0%;
+  touch-action: none;
+  user-select: none;
+  transform: translate(0px, 0px);
+
+   /*sombra especial*/
+   -webkit-filter: drop-shadow(1vmin 1vmin 1vmin #222);
+   filter: drop-shadow(1vmin 1vmin 1vmin #222);
+
+ 
+  
+}
+
+#gabriel_barriga{
+    position: absolute;
+    top: 25vmin;
+    left: 50vmin;
+    width: 23vmin;
+    z-index: 10 !important;   
+  }
+
+  #gabriel_braco_esquerdo{
+    position: absolute;
+    top: 50vmin;
+    left: 44vmin;
+    width: 17vmin;
+    z-index: 9 !important;   
+/*
+    -webkit-animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  */
+  }
+
+  #gabriel_braco_direito{
+    position: absolute;
+    top: 50vmin;
+    left: 65vmin;
+    width: 17vmin;  
+    z-index: 9 !important;
+    
+    /*
+    -webkit-animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  */
+  }
+
+  #gabriel_perna_direita{
+    position: absolute;
+    top: 65vmin;
+    left: 65vmin;
+    width: 7vmin;   
+    z-index: 9 !important;
+/*
+    -webkit-animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  */
+  }
+
+  #gabriel_perna_esquerda{
+    position: absolute;
+    top: 65vmin;
+    left: 52vmin;
+    width: 9vmin;  
+    z-index: 9 !important; 
+
+    /*
+    -webkit-animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  */
+  }
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  abana_preso_a_direita  */
+@-webkit-keyframes abana_preso_a_direita {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+  }
+
+  100% {
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+  }
+}
+
+@keyframes abana_preso_a_direita {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+  }
+
+  100% {
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  abana_preso_a_esquerda  */
+@-webkit-keyframes abana_preso_a_esquerda {
+  0% {
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+  }
+
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+  }
+}
+
+@keyframes abana_preso_a_esquerda {
+  0% {
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+  }
+
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+  }
+}
+
+

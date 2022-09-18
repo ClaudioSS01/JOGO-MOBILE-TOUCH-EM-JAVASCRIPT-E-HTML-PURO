@@ -1,0 +1,35 @@
+editar_moveis{
+    position: fixed;
+    top: auto !important;
+    right: 3vmin !important;
+    top: 3vmin !important;
+    left: auto !important;
+    background: lightgreen;
+    border-radius: 50%;
+    width: 15vmin;
+    height: 15vmin;
+    border: 1px solid green;
+    z-index: 9000 !important;
+}
+
+#img_mais_moveis{
+    position: absolute;
+    width: 10vmin;
+    top: 2vmin;
+    left: 2.5vmin;
+    z-index: 9000 !important;
+}
+
+menu_mais_moveis{
+    position: absolute;
+    top: 17vmin !important;
+    right: -50vmin !important;
+
+    left: auto !important;
+    background: lightgreen;
+    border-radius: 5%;
+    width: 15vmin;
+    height: 70vmin;
+    border: 1px solid green; 
+    z-index: 9000 !important;
+}

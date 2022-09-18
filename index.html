@@ -1,0 +1,1187 @@
+<html>
+
+<head>
+  <script type="module">
+    var animacao_gabriel_inserida_sim_ou_nao = "nao";
+    var animacao_shirley_inserida_sim_ou_nao = "nao";
+    //aqui vamos tratar as animações dos elementos
+function tratar_animacao(id_do_elemento_a_ser_tratado,estado_do_elemento){
+  try {
+    console.log(`elemento recebido "${id_do_elemento_a_ser_tratado}" estado do elemento "${estado_do_elemento}"`);
+var elemento_atual = document.getElementById(id_do_elemento_a_ser_tratado);
+//pegando x do cliente que equivale a x do elemento quando essa function foi chamada
+var coordenadas = elemento_atual.getBoundingClientRect();
+var elemento_atual_x = coordenadas.left;
+var elemento_atual_y = coordenadas.top;
+var shirley_atual_x = 151;
+var shirley_atual_y = 95;
+
+var z_atual = document.getElementById(id_do_elemento_a_ser_tratado).style.zIndex;
+document.getElementById(id_do_elemento_a_ser_tratado).style.zIndex = z_atual + 10;
+
+
+
+console.log(`"${id_do_elemento_a_ser_tratado}" posição x "${elemento_atual_x}" posição y "${elemento_atual_y}"`);
+//se o objeto clicado for o cachorro    
+//tratando do cachorro
+    if(id_do_elemento_a_ser_tratado == "dog"){
+      //se o cachorro começou a ser arrastado
+      if(estado_do_elemento == "comecou"){
+        console.log("cachorro começou a ser arrastado removendo animação");
+
+        //essa linha remove a animação
+        elemento_atual.style.webkitAnimation = 'none';
+
+        //aqui coloca a animação novamente depois de 4 segundos
+        setTimeout(()=>{
+          //antes de recolocar a animação no cachorro reescrever ela com a atual posicao 
+          //do elemento x do cachorro para que o mesmo
+          
+          //consiga continuar de caminha a partir da posição em que ele se encontra
+          var nova_animacao_css_dog_run = `
+          /*atualização 04/06/2022 10:46*/
+/*animação para o cachorro ir e voltar*/
+
+
+
+/*o correto é colocar essa animação em todo o cachorro*/
+@-webkit-keyframes animacao-cachorro-vai-e-volta {
+  0% {
+    transform: scale(1) rotate(15deg) rotate(0deg) scaleX(-1);
+    left: ${elemento_atual_x}px;
+    top: ${elemento_atual_y}px;
+  }
+  0.01%{
+    /*aqui voltamos com o top para posição original do dog*/
+ top: 55vmin;
+  }
+
+  49.99% {
+    transform: scale(1) rotate(15deg) rotate(0deg) scaleX(-1);
+  }
+
+  50% {
+    /*a ideia aqui é que quando ele chegar em na metade do caminho que ele volte*/
+    left: 800vmin;
+    /*responsavel por virar a imagem para o cachorro voltar*/
+    transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(1);
+  }
+
+  99.99% {
+    transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(1);
+  }
+  100% {
+    left: -50vmin;
+    transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(-1);
+  }
+}
+          `;
+          //preparamos uma div só para colocar as animações
+          //pegando o elemento ond esta a animação do run que fica aqui no index.html
+          document.getElementById("animacao_dog_run").innerHTML = nova_animacao_css_dog_run;
+            elemento_atual.style.webkitAnimation = 'animacao-cachorro-vai-e-volta 140s infinite';
+        },4000)
+
+//depois se setar a animação acima a partir da posição do dog volte com a animação original depois de um ciclo de 70 segundpos
+setTimeout(()=>{
+  var animacao_original_css_dog_run = `   /*atualização 04/06/2022 10:46*/
+/*animação para o cachorro ir e voltar*/
+
+
+
+/*o correto é colocar essa animação em todo o cachorro*/
+@-webkit-keyframes animacao-cachorro-vai-e-volta {
+  0% {
+    transform: scale(1) rotate(15deg) rotate(0deg) scaleX(-1);
+    left: -10vmin;
+  }
+
+  49.99% {
+    transform: scale(1) rotate(15deg) rotate(0deg) scaleX(-1);
+  }
+
+  50% {
+    /*a ideia aqui é que quando ele chegar em na metade do caminho que ele volte*/
+    left: 800vmin;
+    /*responsavel por virar a imagem para o cachorro voltar*/
+    transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(1);
+  }
+
+  99.99% {
+    transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(1);
+  }
+  100% {
+    left: -50vmin;
+    transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(-1);
+  }
+}
+ `;
+   //aqui voltamos com a animação original para depois do primeiro ciclo
+   //para o cachorro consegui volta de onde saiu
+   document.getElementById("animacao_dog_run").innerHTML = animacao_original_css_dog_run;
+            elemento_atual.style.webkitAnimation = 'animacao-cachorro-vai-e-volta 140s infinite';
+        console.log('voltando com animação inicial do cachorro')
+},70000)
+
+        }
+    }//aqui fechamos se o objeto tratado for o cachorro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //se o objeto clicado for o gabriel
+    //tratando animação do gabriel
+    if( id_do_elemento_a_ser_tratado == "gabriel"){
+     //console.log(`"${id_do_elemento_a_ser_tratado}" posição x "${elemento_atual_x}" posição y "${elemento_atual_y}"`);
+
+     //essas duas variaveis foram criadas pra tratar a questao da roupa
+      var gabriel_atual_x = elemento_atual_x;
+      var gabriel_atual_y = elemento_atual_y;
+
+
+      //quando gabriel começar a ser arrastado
+      if(estado_do_elemento == "comecou"){
+      console.log('Vamos tratar a animação de '+id_do_elemento_a_ser_tratado);
+
+      //inserir nova animação do gabriel
+        //essa linha remove a animação
+       // elemento_atual.style.webkitAnimation = 'none';
+
+//animacao css de balancçar braços e pernas
+var animacao_gabriel_css = `
+
+
+  .gabriel_braco_esquerdo{
+    
+    -webkit-animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+  .gabriel_braco_direito{
+    
+    -webkit-animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+  .gabriel_perna_direita{
+  
+    -webkit-animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+  .gabriel_perna_esquerda{
+    
+    -webkit-animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+
+
+
+
+`;
+
+if(animacao_gabriel_inserida_sim_ou_nao == "nao"){
+  animacao_gabriel_inserida_sim_ou_nao = "sim"
+document.getElementById("animacao_gabriel").innerHTML = animacao_gabriel_css;
+
+//  document.getElementById("animacao_gabriel").innerHTML = nova_animacao_css_dog_run;
+      document.getElementById("gabriel_braco_esquerdo").setAttribute('class','gabriel_braco_esquerdo');
+      document.getElementById("gabriel_perna_esquerda").setAttribute('class','gabriel_perna_esquerda');
+      document.getElementById("gabriel_braco_direito").setAttribute('class','gabriel_braco_direito');
+      document.getElementById("gabriel_perna_direita").setAttribute('class','gabriel_perna_direita');
+
+
+}
+
+}//fim do comecou a ser arrastado
+
+
+if(estado_do_elemento == "parou"){
+  //para que seja possivel reanimar o gabriel novamente
+  animacao_gabriel_inserida_sim_ou_nao = "nao";
+  //quando a gabriel parar de ser arrastado
+  document.getElementById("gabriel_braco_esquerdo").removeAttribute('class');
+      document.getElementById("gabriel_perna_esquerda").removeAttribute('class');
+      document.getElementById("gabriel_braco_direito").removeAttribute('class');
+      document.getElementById("gabriel_perna_direita").removeAttribute('class');
+
+}
+
+
+
+
+
+    }
+//aqui fecha fim do se for gabriel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //se o objeto clicado for a shirley
+    //tratando animação da shirley
+    if( id_do_elemento_a_ser_tratado == "shirley"){
+      console.log('\r\n\r\n\r\n shirley sendo arrastada \r\n\r\n\r\n')
+     //console.log(`"${id_do_elemento_a_ser_tratado}" posição x "${elemento_atual_x}" posição y "${elemento_atual_y}"`);
+
+     //essas duas variaveis foram criadas pra tratar a questao da roupa
+      shirley_atual_x = elemento_atual_x;
+      shirley_atual_y = elemento_atual_y;
+
+
+      //quando shirley começar a ser arrastado
+      if(estado_do_elemento == "comecou"){
+      console.log('Vamos tratar a animação de '+id_do_elemento_a_ser_tratado);
+
+      //inserir nova animação do shirley
+        //essa linha remove a animação
+       // elemento_atual.style.webkitAnimation = 'none';
+
+//animacao css de balancçar braços e pernas
+var animacao_shirley_css = `
+
+
+  .shirley_braco_esquerdo{
+    
+    -webkit-animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+  .shirley_braco_direito{
+    
+    -webkit-animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+  .shirley_perna_direita{
+  
+    -webkit-animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_esquerda 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+  .shirley_perna_esquerda{
+    
+    -webkit-animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+    animation: abana_preso_a_direita 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate-reverse both;
+  
+  }
+
+
+
+
+
+`;
+
+if(animacao_shirley_inserida_sim_ou_nao == "nao"){
+  animacao_shirley_inserida_sim_ou_nao = "sim"
+document.getElementById("animacao_shirley").innerHTML = animacao_shirley_css;
+
+//  document.getElementById("animacao_shirley").innerHTML = nova_animacao_css_dog_run;
+      document.getElementById("SHIRLEY_braco_esquerdo").setAttribute('class','shirley_braco_esquerdo');
+      document.getElementById("shirley_perna_esquerda").setAttribute('class','shirley_perna_esquerda');
+      document.getElementById("SHIRLEY_braco_direito").setAttribute('class','shirley_braco_direito');
+      document.getElementById("shirley_perna_direita").setAttribute('class','shirley_perna_direita');
+
+
+}
+
+}//fim do comecou a ser arrastado
+
+
+if(estado_do_elemento == "parou"){
+  //para que seja possivel reanimar o shirley novamente
+  animacao_shirley_inserida_sim_ou_nao = "nao";
+  //quando a shirley parar de ser arrastado
+  document.getElementById("SHIRLEY_braco_esquerdo").removeAttribute('class');
+      document.getElementById("shirley_perna_esquerda").removeAttribute('class');
+      document.getElementById("SHIRLEY_braco_direito").removeAttribute('class');
+      document.getElementById("shirley_perna_direita").removeAttribute('class');
+
+}
+
+
+
+
+
+    }
+//aqui fecha fim do se for shirley
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//se o que esta sendo arrastado for o vestido da shirley
+if( id_do_elemento_a_ser_tratado == "roupa1"){
+  console.log('vestido da shirley sendo arrastado');
+
+  /*    <div class="draggable" id="roupa1" class="roupa1">
+      <img src="./img/personagens/vestido shirley.png" id="vestido_shirley">
+    </div>
+    
+       var shirley_atual_x = elemento_atual_x;
+      var shirley_atual_y = elemento_atual_y;
+    
+    */
+
+    var vestido_shirley_x = (elemento_atual_x - 220);
+      var vestido_shirley_y = (elemento_atual_y - 60);
+      var margem_de_colisao = 60;
+
+      console.log(`vestido x:'${vestido_shirley_x}' y:'${vestido_shirley_y}'`);
+      console.log(`shirley x:'${shirley_atual_x}' y:'${shirley_atual_y}'`)
+
+      if(vestido_shirley_x < parseInt(shirley_atual_x + margem_de_colisao) && vestido_shirley_x > (shirley_atual_x - margem_de_colisao)){
+        if(vestido_shirley_y < parseInt(shirley_atual_y + margem_de_colisao) && vestido_shirley_y > (shirley_atual_y - margem_de_colisao)){
+          console.log('\r\n\r\n\r\n\r\n\r\n\r\n\r\n o vestido esta colidindo com a shirley \r\n\r\n\r\n\r\n\r\n\r\n');
+        //subistituir vestido
+        var img = document.getElementById('SHIRLEY_barriga');
+img.src = './img/personagens/vestido shirley.png';
+
+//  <img src="./img/personagens/barriga shirley.png" id="SHIRLEY_barriga">
+var vestido_arrastavel = document.getElementById("roupa1");
+          //apagar o vestido
+          document.body.removeChild(vestido_arrastavel); 
+        }
+      }
+
+}
+
+//fim do modo de vestido 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  } catch (error) {
+    console.log(`erro ao tratar o elemento "${id_do_elemento_a_ser_tratado}" que tem como estado "${estado_do_elemento}" erro "${error}" `)
+  }
+}//aqui fechar a funcao que trata as animaçoes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    import interact from 
+    'https://cdn.interactjs.io/v1.10.11/interactjs/index.js'
+    
+    interact('.item').draggable({
+      listeners: {
+        move (event) {
+          console.log(event.pageX,
+                      event.pageY)
+        }
+      }
+    })
+
+
+    // target elements with the "draggable" class
+interact('.draggable')
+.draggable({
+// enable inertial throwing
+inertia: true,
+// keep the element within the area of it's parent
+modifiers: [
+  interact.modifiers.restrictRect({
+    restriction: 'parent',
+    endOnly: true
+  })
+],
+// enable autoScroll
+autoScroll: true,
+
+listeners: {
+  
+  // quando começa a ser arrastado
+  move: dragMoveListener,
+
+  //quando termina de ser arrastado
+  end (event) {
+    pegou = false;
+    console.log('elemento PAROU de ser arrastado')
+    console.log(event.target.id)
+    tratar_animacao(event.target.id,"parou");
+    //se ao parar o elemento for o cachorro
+    if(event.target.id == "dog"){
+      latir();
+    } 
+  
+
+  }
+}
+})
+
+
+var camada_da_frente = "10";
+
+
+
+function dragMoveListener (event) {
+
+  var target = event.target;
+var elemento_atualmente_arrastado = event.target.id;
+console.log("elemento COMEÇOU a ser arrastado :::");
+console.log(elemento_atualmente_arrastado)
+console.log("ativou 1")
+//trazer_para_frente(elemento_atualmente_arrastado)
+tratar_animacao(elemento_atualmente_arrastado,"comecou");
+
+}
+
+
+
+var pegou = false;
+
+
+function trazer_para_frente(id_do_elemento_de_trazer_para_frente){
+  try {
+
+    if(pegou == true){
+      console.log('elemento que vamos trazer pra frente');
+    console.log(id_do_elemento_de_trazer_para_frente);
+    //aqui pegamos o elemento atual
+
+    window.getZIndex = function (e) {      
+  var z = window.document.defaultView.getComputedStyle(e).getPropertyValue('z-index');
+  if (isNaN(z)) return window.getZIndex(e.parentNode);
+  return z; 
+};
+
+var myZIndex = window.getZIndex($(id_do_elemento_de_trazer_para_frente)[0]);
+
+console.log(`o elemento "${id_do_elemento_de_trazer_para_frente}"JA ESTA NA CAMANDA DA FRETE z-index "${myZIndex}"`)
+
+    }else{
+      pegou = true;
+      console.log('elemento que vamos trazer pra frente');
+    console.log(id_do_elemento_de_trazer_para_frente)
+
+    window.getZIndex = function (e) {      
+  var z = window.document.defaultView.getComputedStyle(e).getPropertyValue('z-index');
+  if (isNaN(z)) return window.getZIndex(e.parentNode);
+  return z; 
+};
+
+var myZIndex = window.getZIndex($(id_do_elemento_de_trazer_para_frente)[0]);
+
+console.log(`o elemento "${id_do_elemento_de_trazer_para_frente}" esta na camada z-index "${myZIndex}"`)
+
+    }
+  } catch (error) {
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// this function is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener
+
+
+/* The dragging code for '.draggable' from the demo above
+* applies to this demo as well so it doesn't have to be repeated. */
+
+// enable draggables to be dropped into this
+interact('.dropzone').dropzone({
+// only accept elements matching this CSS selector
+accept: '#yes-drop',
+// Require a 75% element overlap for a drop to be possible
+overlap: 0.75,
+
+// listen for drop related events:
+
+ondropactivate: function (event) {
+console.log("ativou 2")
+},
+ondragenter: function (event) {
+var draggableElement = event.relatedTarget
+var dropzoneElement = event.target
+console.log("ativou 3")
+},
+ondragleave: function (event) {
+// remove the drop feedback style
+console.log("ativou 4")
+},
+ondrop: function (event) {
+event.relatedTarget.textContent = 'Dropped'
+console.log("ativou 5")
+},
+ondropdeactivate: function (event) {
+
+console.log("ativou 6")
+}
+})
+
+interact('.drag-drop')
+.draggable({
+inertia: false,
+modifiers: [
+  interact.modifiers.restrictRect({
+    restriction: 'parent',
+    endOnly: true
+  })
+],
+autoScroll: true,
+// dragMoveListener from the dragging demo above
+listeners: { move: dragMoveListener }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
+  <script src="./js/local_storage.js"></script>
+  <script src="./js/modulo_testes.js"></script>
+  <script src="./js/modolu_adicionar_imagens.js"></script>
+  <script src="./js/altura_e_largura_da_tela.js"></script>
+  <script src="./js/trava_tela_de_scroll.js"></script>
+  <script src="./js/detecta_colisao.js"></script>
+  <script src="./js/status.js"></script>
+  <script src="./js/arrastavel.js"></script>
+  <script src="./js/iniciar_arrastavel.js"></script>
+  <script src="./js/gabriel.js"></script>
+  <script src="./js/shirley.js"></script>
+  <script src="./js/salvar_e_carregar_pagina.js"></script>
+  <script src="./js/ao_iniciar_execute.js"></script>
+  <script src="./js/a_cada_tick.js"></script>
+  <script src="./js/gui.js"></script>
+  <script src="./js/abrir_guarda_roupa.js"></script>
+  <script src="./js/index.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/dog.css">
+  <link rel="stylesheet" href="./css/tapete.css">
+  <link rel="stylesheet" href="./css/abajur.css">
+  <link rel="stylesheet" href="./css/shirley.css">
+  <link rel="stylesheet" href="./css/gabriel.css">
+  <link rel="stylesheet" href="./css/gui.css">
+  <link rel="stylesheet" href="./css/cozinha.css">
+  <link rel="stylesheet" href="./css/sala.css">
+  <link rel="stylesheet" href="./css/decoracao.css">
+  <link rel="stylesheet" href="./css/brinquedos.css">
+  <link rel="stylesheet" href="./css/roupa1.css">
+  <script src="./js/pega_coordenadas_da_imagem.js"></script>
+  <!--    <link rel="manifest" href="manifest.webmanifest">    -->
+
+  <title>GASHI WORLD</title>
+
+
+
+
+
+
+
+
+</head>
+<style>
+  .load {
+    position: fixed;
+    display: block;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+
+  .aparecer {
+    position: fixed;
+    display: block;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    -webkit-animation: mostrar 3s 1;
+  }
+
+  @-webkit-keyframes mostrar {
+    0% {
+      background-color: black;
+    }
+
+    100% {
+      background-color: transparent;
+    }
+  }
+</style>
+<script>
+  function loading() {
+    document.getElementById('load').removeAttribute("class")
+    document.getElementById('load').setAttribute("class", "aparecer")
+    setTimeout(() => {
+      //aqui removemos o elemento inteiro do html
+      document.getElementById('load').remove()
+    }, 2000)
+
+  }
+</script>
+
+<body onload="loading()" id="body" id="outer-dropzone" class="dropzone">
+  <div id="load" class="load"></div>
+
+
+
+
+  <style id="animacao_gabriel">
+    /*atualização 11/06/2022 09:37*/
+    /*aqui é onde vou colocar as animação do gabriel*/
+  </style>
+  <style id="animacao_shirley">
+    /*atualização 11/06/2022 09:37*/
+    /*aqui é onde vou colocar as animação da shirley*/
+  </style>
+
+
+
+
+
+
+
+
+  <style id="animacao_dog_run">
+    /*atualização 04/06/2022 10:46*/
+    /*animação para o cachorro ir e voltar*/
+
+
+
+    /*o correto é colocar essa animação em todo o cachorro*/
+    @-webkit-keyframes animacao-cachorro-vai-e-volta {
+      0% {
+        transform: scale(1) rotate(15deg) rotate(0deg) scaleX(-1);
+        left: -10vmin;
+      }
+
+      49.99% {
+        transform: scale(1) rotate(15deg) rotate(0deg) scaleX(-1);
+      }
+
+      50% {
+        /*a ideia aqui é que quando ele chegar em na metade do caminho que ele volte*/
+        left: 800vmin;
+        /*responsavel por virar a imagem para o cachorro voltar*/
+        transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(1);
+      }
+
+      99.99% {
+        transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(1);
+      }
+
+      100% {
+        left: -50vmin;
+        transform: scale(1) rotate(-5deg) rotate(0deg) scaleX(-1);
+      }
+    }
+  </style>
+
+  <!--elementos arrastaveis:
+  
+  OBS IMPORTANTE! SEM QUE ADICIONAR UM NOVO ITEN ARRASTAVEL CRIAR UM NOVO ITEM COMO O
+  MESMO NOME NO DOCUMENTO
+   
+  INDEX.CSS 
+   
+  PARA QUE ELE POSSA SER ARRASTAVEL. E USAR O ID DA DIV
+
+  -->
+
+
+
+
+
+  <!--COLOCAR SEMPRE OS PERSONAGENS POR ULTIMO
+  PARA QUE ELES FIQUEM SEMPRE NA CAMADA DA FRENTE DOS
+OBJETOS ARRASTAVEI
+
+
+  <div id="shirley"  class="draggable" data-x="59.855072021484375"
+    data-y="-120.79893493652344" style="transform: translate(59.8551px, -120.799px);">
+    <img id="shirley-img" src="./img/shirley 17032022.png" alt="" width="120px">
+  </div>
+
+
+-->
+
+
+
+
+
+  <div id="yes-drop" class="drag-drop">
+    <container_urso class="draggable">
+      <img src="./img/brinquedos/ursinho.png" alt="" id="ursinho">
+    </container_urso>
+  </div>
+
+  <div id="inner-dropzone" class="dropzone">
+    <tapete_quarto>
+    </tapete_quarto>
+
+  </div>
+
+  <!--DECORAÇÃO:-->
+  <img src="./img/decoracao/janela2.png" alt="" width="15%"
+    style="position: absolute; top: 0%; left: 520px;  z-index: -10;">
+
+  <img src="./img/decoracao/janela2.png" alt="" width="15%"
+    style="position: absolute; top: 10%; left: 1500px;  z-index: -10;">
+
+  <img src="./img/decoracao/janela2.png" alt="" width="15%"
+    style="position: absolute; top: 10%; left: 2500px; z-index: -10;">
+
+  <img src="./img/decoracao/LAREIRA.png" id="lareira" alt="">
+
+  <!--QUARTO:-->
+  <img src="./img/moveis/abajur.png" id="abajur" class="draggable">
+  <img src="./img/moveis/cama.png" class="dropzone" alt="" width="30%"
+    style="position: absolute; top: 20%; left: 280px;  z-index: -8;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <img src="./img/moveis/criadomudo.png" alt="" width="20%"
+    style="position: absolute; top: 30%; left: 500px;  z-index: -8;">
+
+  <!--COZINHA:-->
+  <img src="./img/moveis/guarda roupas.png" id="guarda_roupa" alt="">
+  <img src="./img/eletrodomesticos/fogão.png" id="fogao" alt="">
+  <img src="./img/moveis/pia.png" id="pia" alt="">
+  <img src="./img/eletrodomesticos/geladeira.png" id="geladeira" alt="">
+  <img src="./img/moveis/armario.png" id="armario_1" alt="">
+  <img src="./img/moveis/armario.png" id="armario_2" alt="">
+  <img src="./img/utencilios/colher grande.png" id="colher_grande_1" class="draggable">
+  <img src="./img/utencilios/colher grande.png" id="colher_grande_2" class="draggable">
+  <img src="./img/utencilios/colher grande.png" id="colher_grande_3" class="draggable">
+  <img src="./img/utencilios/colher grande.png" id="colher_grande_4" class="draggable">
+  <img src="./img/utencilios/escumadeira.png" id="escumadeira" class="draggable">
+  <img src="./img/utencilios/garfo grande.png" id="garfo" class="draggable">
+  <img src="./img/utencilios/panela menor sem tampa.png" id="panela_1" class="draggable">
+  <img src="./img/utencilios/panela menor sem tampa.png" id="panela_2" class="draggable">
+  <img src="./img/utencilios/panela menor sem tampa.png" id="panela_3" class="draggable">
+
+
+
+  <!--SALA:-->
+  <img src="./img/moveis/sofa.png" id="sofa_1" alt="">
+  <img src="./img/moveis/sofa.png" id="sofa_2" alt="">
+
+  <gui>
+    <editar_moveis>
+      <img onclick="editar_moveis()" src="./img/gui/editar_moveis.png" id="img_mais_moveis" alt="">
+      <menu_mais_moveis id="menu_de_moveis">
+      </menu_mais_moveis>
+    </editar_moveis>
+  </gui>
+
+  <div id="chao" style="     position: fixed;
+top: 50%;
+left: 0%;
+z-index: -10;
+width: 2700px;
+height: 50%;
+background-color: rgb(205 104 137);"></div>
+
+
+
+
+
+  <cachorro id="dog" class="draggable">
+    <script src="./js/dog.js"></script>
+    <orelha_1>
+    </orelha_1>
+    <perna_frente2>
+    </perna_frente2>
+    <perna_atras2>
+    </perna_atras2>
+    <cabeca>
+
+      <div class="mancha"></div>
+      <div class="olhos"></div>
+      <div class="nariz"></div>
+      <div class="boca"></div>
+      <orelha_2>
+      </orelha_2>
+    </cabeca>
+    <barriga>
+      <mancha_na_barriga>
+      </mancha_na_barriga>
+      <rabo>
+      </rabo>
+      <perna_frente1>
+      </perna_frente1>
+
+      <perna_atras1>
+      </perna_atras1>
+
+    </barriga>
+
+  </cachorro>
+
+
+  <!--GABRIEL E SHIRLEY TEM QUE ESTAR AQUI PRA SEMPRE ESTAREM EM CIMA
+     <img src="./img/personagens/shirley 17032022.png" id="shirley" class="draggable">
+       <img src="./img/personagens/GABRIEL BRACO ESQUERDO.png" id="gabriel_braco_esquerdo">
+      <img src="./img/personagens/GABRIEL GRACO DIREITO.png" id="gabriel_braco_direito">
+      <img src="./img/personagens/GABRIEL PERNA DIREITA.png" id="gabriel_perna_direita">
+      <img src="./img/personagens/GABRIEL PERNA ESQUERDA.png" id="gabriel_perna_esquerda">
+
+      
+   
+    :-->
+   <div id="roupas"></div>
+
+    <div id="shirley" class="draggable">
+      <img class="shirley_cabeca" src="./img/personagens/shirley cabeca.png" id="cabeca_shirley">
+      <img src="./img/personagens/shirley BRACO ESQUERDO.png" id="SHIRLEY_braco_esquerdo">
+      <img src="./img/personagens/shirley BRACO DIREITO.png" id="SHIRLEY_braco_direito">
+      <img src="./img/personagens/barriga shirley.png" id="SHIRLEY_barriga">
+      <img src="./img/personagens/perna shirley direita.png" id="shirley_perna_direita">
+      <img src="./img/personagens/perna shirley direita.png" id="shirley_perna_esquerda">
+    </div>
+
+
+
+  <div id="gabriel" class="draggable">
+    <img src="./img/personagens/GABRIEL BARRIGA.png" id="gabriel_barriga">
+    <img src="./img/personagens/GABRIEL BRACO ESQUERDO.png" id="gabriel_braco_esquerdo">
+    <img src="./img/personagens/GABRIEL GRACO DIREITO.png" id="gabriel_braco_direito">
+    <img src="./img/personagens/GABRIEL PERNA DIREITA.png" id="gabriel_perna_direita">
+    <img src="./img/personagens/GABRIEL PERNA ESQUERDA.png" id="gabriel_perna_esquerda">
+
+  </div>
+
+
+</body>
+
+</html>

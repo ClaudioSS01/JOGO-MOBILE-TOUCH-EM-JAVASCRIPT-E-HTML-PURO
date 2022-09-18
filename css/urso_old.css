@@ -1,0 +1,174 @@
+
+
+/*urso*/
+/*para tornar qq item arrastavel basta colocar o class
+
+class="draggable"
+
+e depois colocar esse codigo:
+
+codigo gragable
+ccodigo arrastavel
+
+"
+
+  min-height: 0;
+  margin: 0 0 0 0;
+  border-radius: 0.75em;
+  padding: 0%;
+  touch-action: none;
+  user-select: none;
+  transform: translate(0px, 0px);
+  z-index: 0;
+
+
+"
+
+*/
+
+/*container do urso*/
+container_urso{
+    position: absolute;
+    top: 35vmin;
+    left: 180vmin;
+    width: 20vmin;
+    height: 20vmin;
+    background: transparent;
+  
+  
+    min-height: 0;
+    margin: 0 0 0 0;
+    border-radius: 0.75em;
+    padding: 0%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    z-index: 0;
+  }
+  
+  /*a cabeça do urso*/
+  cabeca_urso{
+    position: absolute;
+    width: 10vmin;
+    height: 10vmin;
+    background: brown;
+    border-radius: 50%;
+  }
+  
+  
+  /*orelhas do urso*/
+  cabeca_urso::before{
+    /*aqui eu monto a primeira orelha do urso*/
+    content: "";
+    position: absolute;
+    top: -2vmin;
+    width: 4vmin;
+    height: 4vmin;
+    background: brown;
+    border-radius: 50%;
+    /*segunda orelha do urso*/
+    box-shadow: 7vmin 0vmin brown;
+  }
+  
+  /*aqui vou montar a parte brnaca interna da orelha do urso*/
+  cabeca_urso::after{
+      /*aqui eu monto a primeira orelha do urso*/
+      content: "";
+      position: absolute;
+      top: -1.4vmin;
+      left: 1vmin;
+      width: 2vmin;
+      height: 2vmin;
+      background: rgb(172, 105, 105);
+      border-radius: 50%;
+      /*segunda orelha do urso*/
+      box-shadow: 7vmin 0vmin rgb(172, 105, 105);
+  }
+  
+  olhos_urso{
+    position: absolute;
+    top: 2vmin;
+    left: 2vmin;
+    width: 2vmin;
+    height: 2vmin;
+    background: black;
+    border-radius: 50%;
+    /*segunda orelha do urso*/
+    box-shadow: 4vmin 0vmin black;
+  }
+  
+  
+  
+  
+  
+  /*fucinho do urso*/
+  fucinho_urso{
+  
+    position: absolute; 
+    top: 5vmin; 
+    left : 4vmin; 
+    background: transparent; 
+    width: 0; 
+    height: 0; 
+    border: 0 solid transparent; 
+    border-left-width: 1vmin; 
+    border-right-width: 1vmin; 
+    border-top: 1vmin solid red;
+    
+  
+  }
+  
+  fucinho_urso::after{
+    content: "";
+    position: absolute; 
+    top: 0vmin; 
+    left : -1vmin; 
+    background: transparent; 
+    width: 0; 
+    height: 0; 
+    border: 0 solid transparent; 
+    border-left-width: 1vmin; 
+    border-right-width: 1vmin; 
+    border-top: 1vmin solid red;
+  }
+  
+  
+  fucinho_urso::before{
+    content: "";
+    position: absolute;
+    top: -1vmin;
+    left: -3.3vmin;
+    width: 7vmin;
+    height: 5vmin;
+    background: rgb(174, 87, 87);
+    border-radius: 50%;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

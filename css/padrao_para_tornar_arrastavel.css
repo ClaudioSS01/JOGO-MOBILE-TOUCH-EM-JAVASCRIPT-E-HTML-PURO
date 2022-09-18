@@ -1,0 +1,31 @@
+/*para tornar qq item arrastavel basta colocar o class
+
+
+class="draggable"
+
+
+e depois colocar esse codigo no css do elemento que queremos que seja arrastavel:
+
+
+
+tente primeiro esse se nao funcionar use o que esta em aspas depois desse
+
+  touch-action: none;
+  user-select: none;
+
+
+se o de cima nao funcionar use esse abaixo
+
+"
+
+  min-height: 0;
+  margin: 0 0 0 0;
+  border-radius: 0.75em;
+  padding: 0%;
+  touch-action: none;
+  user-select: none;
+  transform: translate(0px, 0px);
+  z-index: 0;
+
+
+"
